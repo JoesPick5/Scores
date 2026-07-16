@@ -2,7 +2,7 @@ name: Download ESPN Scoreboard
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/2 * * * *"
 
   workflow_dispatch:
 
@@ -23,7 +23,7 @@ jobs:
       - name: Download JSON
         run: |
           curl -L \
-          "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?seasontype=3&dates=2026&week=1" \
+          "https://site.web.api.espn.com/apis/site/v2/sports/golf/leaderboard?league=pga&event=401811957" \
           -o data/scoreboard.json
 
       - name: Commit Changes
